@@ -1,0 +1,27 @@
+.navbar{
+    background-color: blue;
+    color:white;
+    display:flex;
+    justify-content: space-between;
+ 
+}
+.container{
+    display: flex;
+    height: 70vh;
+    background-color: bisque;
+}
+.sidebar{
+    background-color: blueviolet;
+    width: 7%;
+}
+.logo{
+    width: 5%;
+}
+body{
+    color:white;
+    background-color: black;
+}
+.footer{
+height: 10vh;
+background-color: brown;
+}
