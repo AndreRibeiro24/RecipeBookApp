@@ -1,27 +1,116 @@
-.navbar{
-    background-color: blue;
-    color:white;
-    display:flex;
-    justify-content: space-between;
- 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lato:wght@400;700&display=swap');
+
+/* ── Variáveis ── */
+:root {
+  --color-bg:        #fdf6ee;
+  --color-navbar:    #c2541a;
+  --color-sidebar:   #4a2c0a;
+  --color-accent:    #e8793d;
+  --color-text-dark: #3b1f08;
+  --color-text-mid:  #7a4f2a;
+  --color-text-light:#f5d9b5;
+  --font-title:      'Playfair Display', serif;
+  --font-body:       'Lato', sans-serif;
 }
-.container{
-    display: flex;
-    height: 70vh;
-    background-color: bisque;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.sidebar{
-    background-color: blueviolet;
-    width: 7%;
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.logo{
-    width: 5%;
+
+/* ── Navbar ── */
+.navbar {
+  background-color: var(--color-navbar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  box-shadow: 0 2px 8px rgba(74, 44, 10, 0.25);
 }
-body{
-    color:white;
-    background-color: black;
+
+.title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  letter-spacing: 0.3px;
 }
-.footer{
-height: 10vh;
-background-color: brown;
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-bg);
+}
+
+/* ── Layout principal ── */
+.container {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 64px - 48px);
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 180px;
+  background-color: var(--color-sidebar);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.sidebar p {
+  padding: 0.65rem 1.25rem;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.sidebar p:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* ── Conteúdo principal ── */
+main {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  background-color: var(--color-bg);
+}
+
+/* ── Footer ── */
+.footer {
+  background-color: var(--color-sidebar);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repo a {
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.repo a:hover {
+  color: var(--color-accent);
 }
