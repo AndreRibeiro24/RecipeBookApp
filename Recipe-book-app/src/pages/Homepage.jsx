@@ -1,20 +1,29 @@
-import Footer from '../components/Footer.jsx'
-import Navbar from '../components/Navbar.jsx'
-import Sidebar from '../components/Sidebar.jsx'
-import '../App.css'
+// import '../App.css'
+// import RecipeList from "../components/RecipeList.jsx"
+// function Homepage() {
+//   return (
+//     <>
+    
+//       <div className = "container">{/*main page content + side bar*/}
+//       <h1>Recipes</h1>
+//       <RecipeList/>
+//       </div>
+      
+//     </>
+//   );
+// }
+// export default Homepage;
+
+
+import RecipeList from '../components/RecipeList.jsx'
 
 function Homepage() {
   return (
-    <>
-    <Navbar/> {/*holds logo + app name*/}
-      <div className = "container">{/*main page content + side bar*/}
-        <Sidebar/> {/*Holds sidebar content wrappend inside the container*/}
-        <main>
-            <p>This is the website</p>
-        </main>
-      </div>
-      <Footer/>
-    </>
-  );
+    <div>
+      <h1 style={{padding: "1.5rem 2.5rem 0"}}>Recipes</h1>
+      <RecipeList />
+    </div>
+  )
 }
+
 export default Homepage;
