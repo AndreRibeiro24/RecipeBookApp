@@ -7,8 +7,19 @@ import Homepage from "./pages/Homepage.jsx";
 import RecipesDetailsPage from "./pages/RecipesDetailsPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import AddRecipePage from './pages/AddRecipePage.jsx';
+import {useState} from 'react'
+import recipesData from './data/recipes.json'
 
 function App() {
+   const [recipes, setRecipes] = useState(recipesData.recipes);
+   const handleAddRecipes = (newRecipe) =>{
+      setRecipes([...recipes,newRecipe])
+    }
+   const handleDelete = (id) => {
+    setRecipes(recipes.filter(recipe => recipe.id !== id))
+  }
+
   return (
     <BrowserRouter>
       <Navbar/>
@@ -16,7 +27,8 @@ function App() {
         <Sidebar/>
         <div className="content">
           <Routes>
-            <Route path="/" element={<Homepage/>} />
+            <Route path="/" element={<Homepage recipes={recipes} onDelete={handleDelete}/>} />
+            <Route path="/add-recipe" element={<AddRecipePage onAddRecipe={handleAddRecipes}/>}/>
             <Route path="/recipes/:recipeId" element={<RecipesDetailsPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="*" element={<NotFoundPage/>}/>

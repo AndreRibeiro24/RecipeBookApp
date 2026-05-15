@@ -1,13 +1,7 @@
 import { useState } from "react"
-import recipesData from "../data/recipes.json"
 import RecipeCard from "./RecipeCard.jsx"
 
-export default function RecipeList() {
-  const [recipes, setRecipes] = useState(recipesData.recipes)
-
-  const handleDelete = (id) => {
-    setRecipes(recipes.filter(recipe => recipe.id !== id))
-  }
+export default function RecipeList({recipes, onDelete}) {
 
   return (
     <div className="recipe-list">
@@ -15,7 +9,7 @@ export default function RecipeList() {
         <RecipeCard 
           key={recipe.id} 
           recipe={recipe} 
-          onDelete={handleDelete} 
+          onDelete ={onDelete}
         />
       ))}
     </div>

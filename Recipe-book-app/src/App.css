@@ -320,3 +320,110 @@ main {
 .recipe-back-btn:hover {
   background-color: var(--color-navbar);
 }
+
+/* ADD RECIPE FORM PAGE + ADD RECIPE BUTTON*/
+
+
+
+/* Add Recipe Button */
+.add-recipe-btn {
+  margin: 1rem 2.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.add-recipe-btn:hover {
+  background-color: var(--color-navbar);
+  transform: translateY(-2px);
+}
+
+/* Add Recipe Form */
+.AddRecipeForm {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(74, 44, 10, 0.1);
+}
+
+.AddRecipeForm span {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.AddRecipeForm form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.AddRecipeForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.AddRecipeForm input,
+.AddRecipeForm select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.AddRecipeForm input:focus,
+.AddRecipeForm select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(232, 121, 61, 0.1);
+}
+
+.AddRecipeForm button[type="submit"] {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.AddRecipeForm button[type="submit"]:hover {
+  background-color: var(--color-navbar);
+}
+.AddRecipeForm button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1rem;
+}
+
+.AddRecipeForm button[type="submit"]:hover {
+  background-color: var(--color-navbar);
+}
