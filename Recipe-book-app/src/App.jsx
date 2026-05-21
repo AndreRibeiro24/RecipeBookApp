@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage recipes={recipes} onDelete={handleDelete}/>} />
             <Route path="/add-recipe" element={<AddRecipePage onAddRecipe={handleAddRecipes}/>}/>
-            <Route path="/recipes/:recipeId" element={<RecipesDetailsPage/>}/>
+            <Route path="/recipes/:recipeId" element={<RecipesDetailsPage recipes={recipes}/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="*" element={<NotFoundPage/>}/>
           </Routes>

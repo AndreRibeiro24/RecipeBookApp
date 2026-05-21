@@ -1,11 +1,14 @@
 import {useParams, Link} from "react-router-dom";
-import recipesData from "../data/recipes.json";
 
-function RecipeDetailsPage(){
+
+function RecipeDetailsPage({recipes}){
     const {recipeId} = useParams();
-    const recipe = recipesData.recipes.find((recipe)=> recipe.id === Number(recipeId));
+    const recipe = recipes.find((recipe)=> recipe.id === Number(recipeId));
+  
 
     if (!recipe) return <h2>Recipe Not Found</h2>
+     console.log("ingredients:", recipe.ingredients);   
+    console.log("instructions:", recipe.instructions); 
     return(
         <div className= "recipe-details">
            
@@ -23,14 +26,14 @@ function RecipeDetailsPage(){
             
             </div>
             <div className="recipe-details-tags">
-                {recipe.tags.map(tag=>(<span key={tag} className="tag">{tag}</span>
+                {recipe.tags?.map(tag=>(<span key={tag} className="tag">{tag}</span>
 
                 ))}
             </div>
              <div className="recipe-details-section">
             <h2>Ingredients</h2>
             <ul>
-            {recipe.ingredients.map((ingredient, i) => (
+            {recipe.ingredients?.map((ingredient, i) => (
               <li key={i}>{ingredient}</li>
             ))}
             </ul>
@@ -38,7 +41,7 @@ function RecipeDetailsPage(){
                   <div className="recipe-details-section">
           <h2>Instructions</h2>
           <ol>
-            {recipe.instructions.map((step, i) => (
+            {recipe.instructions?.map((step, i) => (
               <li key={i}>{step}</li>
             ))}
           </ol>

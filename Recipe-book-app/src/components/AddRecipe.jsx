@@ -9,6 +9,8 @@ export default function AddRecipe({onAddRecipe}) {
     const [servings, setServings] = useState(1);
     const [difficulty, setDifficulty] = useState("Easy");
     const [tags, setTags] = useState("");
+    const [ingredients, setIngredients] = useState("");
+    const [instructions, setInstructions] = useState("");
 
     const handleSubmit = (e) =>{
         e.preventDefault();{/*this prevents page from refreshing when form submits*/}
@@ -22,7 +24,10 @@ export default function AddRecipe({onAddRecipe}) {
         servings,
         difficulty,
         tags: tags.split(",").map(tag => tag.trim()),
+        ingredients: ingredients.split("\n").map(item => item.trim()).filter(item => item !== ""),
+        instructions: instructions.split("\n").map(step => step.trim()).filter(step => step !== ""),
     };
+     console.log("newRecipe:", newRecipe);
     onAddRecipe(newRecipe);
     //thuis clears the form
         setTitle("");
@@ -33,6 +38,8 @@ export default function AddRecipe({onAddRecipe}) {
         setServings(1)
         setDifficulty("Easy");
         setTags("");
+        setIngredients("");
+        setInstructions("");
 
 
     }
@@ -79,6 +86,26 @@ export default function AddRecipe({onAddRecipe}) {
                     Include Tags
                     <input name="tags" type="text" placeholder="Type Your Tags ex:(low cal, fit, tasty, new, trending)" value = {tags} onChange={(e)=> setTags(e.target.value)}/>
                 </label>
+                 <label>
+                        Ingredients (one per line)
+                        <textarea
+                            name="ingredients"
+                            placeholder={"1 cup flour\n2 eggs\n1/2 cup milk"}
+                            value={ingredients}
+                            onChange={(e) => setIngredients(e.target.value)}
+                            style={{ resize: "vertical", minHeight: "120px" }}
+                        />
+                    </label>
+                    <label>
+                        Instructions (one step per line)
+                        <textarea
+                            name="instructions"
+                            placeholder={"Mix dry ingredients\nAdd eggs and milk\nBake at 180°C for 30 mins"}
+                            value={instructions}
+                            onChange={(e) => setInstructions(e.target.value)}
+                             style={{ resize: "vertical", minHeight: "120px" }}
+                        />
+                    </label>
             </div>
             <button type="submit" className="add-recipe-submit-btn">Add Recipe</button>
         </form>

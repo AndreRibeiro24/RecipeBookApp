@@ -4,8 +4,8 @@ function Sidebar(){
     return(
         <>
         <div className ="sidebar">
-            {/* <Link to="/"><p className ="homePage">Home page</p></Link> */}
-            <Link to="/about"><p className ="aboutPage">About page</p></Link>
+            <Link to="/"><p className ="homePage">Home Page</p></Link>
+            <Link to="/about"><p className ="aboutPage">About Page</p></Link>
         </div>
         </>
     );

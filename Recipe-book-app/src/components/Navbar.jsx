@@ -3,7 +3,7 @@ function Navbar(){
     return(
         <>
         <div className="navbar">
-            <h3 className="title">Recipe WebApp</h3>
+            <h3 className="title">Flavor Vault</h3>
             <img src={logoImg} alt='logo' className='logo'/>
             
         </div>
