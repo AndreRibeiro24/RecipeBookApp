@@ -23,6 +23,9 @@ export default function RecipeCard({ recipe, onDelete }) {
           </div>
         </div>
       </Link>
+      <Link to={`recipes/${recipe.id}/edit`}>
+      <button className="recipe-card-edit">Edit</button>
+      </Link>
       <button className="recipe-card-delete" onClick={() => onDelete(recipe.id)}>Delete</button>
     </div>
   )

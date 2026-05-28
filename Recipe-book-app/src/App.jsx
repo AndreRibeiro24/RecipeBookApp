@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import AddRecipePage from './pages/AddRecipePage.jsx';
 import {useState} from 'react'
 import recipesData from './data/recipes.json'
+import EditRecipePage from "./pages/EditRecipePage.jsx"
 
 function App() {
    const [recipes, setRecipes] = useState(recipesData.recipes);
@@ -18,6 +19,11 @@ function App() {
     }
    const handleDelete = (id) => {
     setRecipes(recipes.filter(recipe => recipe.id !== id))
+  }
+  const handleUpdate = (updatedRecipe) =>{
+    setRecipes((prev) =>
+    prev.map((r)=> (r.id === updatedRecipe.id ? updatedRecipe : r))
+  );
   }
 
   return (
@@ -32,6 +38,7 @@ function App() {
             <Route path="/recipes/:recipeId" element={<RecipesDetailsPage recipes={recipes}/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="*" element={<NotFoundPage/>}/>
+            <Route path="/recipes/:recipeId/edit" element={<EditRecipePage recipes={recipes} onUpdateRecipe={handleUpdate}/>}/>
           </Routes>
         </div>
       </div>

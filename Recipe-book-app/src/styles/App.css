@@ -218,6 +218,23 @@ main {
   background-color: #d9534f;
   color: white;
 }
+.recipe-card-edit{
+    margin: 0 1.25rem 1rem;
+  padding: 0.4rem 0.9rem;
+  background-color: transparent;
+  border: 1px solid #aa6a36;
+  color: #dfa04d;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+
+.recipe-card-edit:hover{
+  background-color: #eed256;
+  color: white;
+}
 
 .layout {
   display: flex;
@@ -321,6 +338,21 @@ main {
   background-color: var(--color-navbar);
 }
 
+.back-btn{
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-btn:hover{
+  background-color: var(--color-navbar);
+}
 /* ADD RECIPE FORM PAGE + ADD RECIPE BUTTON*/
 
 
@@ -584,4 +616,14 @@ main {
 
 .back-btn {
   margin-top: 1rem;
+}
+
+/* Avatar photo Styling*/
+
+.avatar-photo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom : 14px;
 }
