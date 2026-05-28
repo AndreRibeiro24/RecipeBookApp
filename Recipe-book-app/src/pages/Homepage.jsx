@@ -6,9 +6,15 @@ import {useState} from 'react'
 function Homepage({recipes, onDelete}) {
   const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState("");
-  const filteredRecipes = recipes.filter((recipe)=>
-    recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  const filteredRecipes = recipes.filter((recipe)=>{
+    const queryVal = searchQuery.toLowerCase();
+    if (!queryVal) return true;
+    return(
+    recipe.title.toLowerCase().includes(queryVal) ||
+    recipe.difficulty?.toLowerCase().includes(queryVal) ||
+    recipe.tags?.some((tag)=> tag.toLowerCase().includes(queryVal)) ||
+    recipe.ingredients?.some((ing)=>ing.toLowerCase().includes(queryVal))
+  )});
 
   return (
     <div>

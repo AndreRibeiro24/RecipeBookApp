@@ -4,7 +4,7 @@ export default function SearchBar({searchQuery, onSearch}) {
         <span className="search-bar-icon">🔍</span>
         <input
         type="text"
-        placeholder="Search recipes here..."
+        placeholder="Search for recipe name, ingredients, tags, etc.."
         value={searchQuery}
         onChange={(e)=> onSearch(e.target.value)}
         />

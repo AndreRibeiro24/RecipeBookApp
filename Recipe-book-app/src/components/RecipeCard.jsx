@@ -14,7 +14,7 @@ export default function RecipeCard({ recipe, onDelete }) {
             <span>👤 {recipe.servings} servings</span>
           </div>
           <p className="recipe-card-difficulty">
-            {recipe.difficulty === "Easy" ? "Starter-Level" : recipe.difficulty === "Medium" ? "Mid-Level" : "Advanced-Level"}
+            {recipe.difficulty === "Easy" ? "Easy" : recipe.difficulty === "Medium" ? "Medium" : "Hard"}
           </p>
           <div className="recipe-card-tags">
             {recipe.tags.map(tag => (
