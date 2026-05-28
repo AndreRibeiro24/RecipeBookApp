@@ -1,5 +1,5 @@
 import {useParams, Link} from "react-router-dom";
-
+import "../styles/App.css"
 
 function RecipeDetailsPage({recipes}){
     const {recipeId} = useParams();
@@ -47,7 +47,7 @@ function RecipeDetailsPage({recipes}){
           </ol>
         </div>
             <Link to="/">
-            <button>Back</button>
+            <button className="back-button">Back</button>
             </Link>
         </div>
         </div>
