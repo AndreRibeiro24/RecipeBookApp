@@ -1,5 +1,6 @@
 
-📖 Recipe Book App A simple and intuitive app to store, manage, and organize all your favourite recipes in one place.
+📖 Recipe Book App 
+A simple and intuitive app to store, manage, and organize all your favourite recipes in one place.
 
 ✨ Features
 
